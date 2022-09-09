@@ -38,4 +38,30 @@ func main() {
 
     fmt.Println(p1, p2)
 
+    //Map
+    m := map[string]int{"a": 1, "b": 2}
+    fmt.Println(m)
+
+    //Struct
+    type Person struct {
+        name string
+        age int
+    }
+    Minh := Person{name: "Minh", age: 20}
+
+    
+
+    //Handle Panic
+    Panicker()
+
+    fmt.Println(Minh)
+}
+
+func Panicker(){
+    defer func()  {
+        if err := recover(); err != nil {
+            fmt.Println("Error", err)
+        }
+    }()
+    panic("Panic")
 }
